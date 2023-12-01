@@ -20,6 +20,10 @@ ENV GID=991 \
     GITHUB_TOKEN_AUTH=false \
     FLARUM_PORT=8888
 
+RUN echo -e 'https://mirrors.aliyun.com/alpine/v3.16/main/\nhttps://mirrors.aliyun.com/alpine/v3.16/community/' > /etc/apk/repositories && \
+    apk update && \
+    apk upgrade
+
 RUN apk add --no-progress --no-cache \
     curl \
     git \
